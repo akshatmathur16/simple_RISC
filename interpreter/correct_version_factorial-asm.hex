@@ -1,0 +1,17 @@
+mov r0, 10: 0x4c00000a
+call .factorial: 0x98000001
+cmp r0, 1: 0x2c000001
+bgt .continue: 0x88000003
+mov r1, 1: 0x4c400001
+ret: 0xa0000000
+sub sp, sp, 8: 0x0fb80008
+st r0, [sp]: 0x7c380000
+st ra, 4[sp]: 0x7ff80004
+sub r0, r0 , 1 : 0x0c000001
+call .factorial: 0x9ffffff8
+ld ra, 4[sp]: 0x77f80004
+ld r0 ,  [sp]: 0x74380000
+add sp,sp, 8: 0x07b80008
+mul r1, r0,r1: 0x10404000
+ret: 0xa0000000
+r1 : 0
