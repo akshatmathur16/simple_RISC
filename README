@@ -1,0 +1,11 @@
+As part of Assignmnet submission for ELP 832 Computer architecture course at
+IIT Delhi.
+
+Reference Material: refer to book "Basic Computer Architecture by Smruti R.
+Sarangi"
+
+Features integrated Simple RISC
+1. Pipelined
+2. Branching instructions
+3. Forwarding and load use 
+4. Synthesizable
