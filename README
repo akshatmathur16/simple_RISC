@@ -4,6 +4,12 @@ IIT Delhi.
 Reference Material: refer to book "Basic Computer Architecture by Smruti R.
 Sarangi"
 
+Can use interpreter avaialble at https://srsarangi.github.io/archbooksoft.html
+to convert simple RISC instructions to Hex to be used as instructions for
+processor.
+
+refer to Makefile to understand Design hierarchy
+
 Features integrated Simple RISC
 1. Pipelined
 2. Branching instructions
