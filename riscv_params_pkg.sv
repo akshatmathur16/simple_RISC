@@ -1,3 +1,4 @@
+`define PROC_SYNTH
 package riscv_params_pkg;
     parameter INSTR_WIDTH=32;
     parameter MEM_DEPTH=2**12;

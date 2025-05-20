@@ -31,11 +31,14 @@ bit [INSTR_WIDTH-1:0] data_mem[DATA_MEM_DEPTH-1:0];
 
 assign mdr = fw_mem.wb_mem_rs2_conflict ? fw_mem.wb_fw_result: op2;
 assign mar_temp = aluResult;
-assign mar = mar_temp[32-1:0];
+//AM not sure why this is written here assign mar = mar_temp[DATA_MEM_DEPTH-1:0];
+assign mar = mar_temp;
 
 assign mem_fw_result = ctrl_sig_reg.isLd ? ldResult: aluResult;
 
 // TAKE THIS TO TOP assign mem_en= ctrl_sig_reg.isLd || ctrl_sig_reg.isSt ? 1'b1: 1'b0;
+
+`ifndef PROC_SYNTH
 
 initial begin
     for(int i=0; i< DATA_MEM_DEPTH; i++)
@@ -43,6 +46,8 @@ initial begin
         data_mem[i] = $urandom_range(1,100);
     end
 end
+
+`endif
 
 
 always @(posedge clk)

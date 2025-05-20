@@ -19,6 +19,7 @@ bit [INSTR_WIDTH-1:0] register_mem[(2**ADDR_WIDTH)-1:0];
 
 // Initializing register memory for simulation
 
+`ifndef PROC_SYNTH
 initial begin
     //register_mem[0] = 'b0; // hardcoded x0 to 0
     register_mem[0] = 'd8; 
@@ -27,6 +28,7 @@ initial begin
         register_mem[i] = $urandom_range(1,8);
     end
 end
+`endif
 
 initial begin
     register_mem[14] = 'd4092;
